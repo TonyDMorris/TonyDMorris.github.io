@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import Nav from "./Nav";
 export default function Header() {
   return (
     <TopBar>
-      <Nav>
+      <NavWrapper>
         <NavLeftSpoiler>
           <Circle />
         </NavLeftSpoiler>
-      </Nav>
+        <Nav />
+      </NavWrapper>
     </TopBar>
   );
 }
@@ -19,9 +21,9 @@ const TopBar = styled.div`
   display: flex;
 `;
 
-const Nav = styled.div`
+const NavWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   height: 75px;
   width: 100%;
   background-color: red;
@@ -29,7 +31,7 @@ const Nav = styled.div`
 `;
 
 const NavLeftSpoiler = styled.div`
-  width: 30%;
+  width: 15%;
   height: 100%;
   background-color: blue;
   display: flex;
@@ -37,11 +39,12 @@ const NavLeftSpoiler = styled.div`
 `;
 
 const Circle = styled.div`
+  box-shadow: inset 5px 0px 0px 0px #000;
   height: 120px;
   width: 20%;
   background-color: red;
   border-radius: 50%;
-  transform: translate(100%, 62.5%);
+  transform: translate(30%, 62.5%);
   position: absolute;
   top: 0;
   left: 0;
