@@ -1,23 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import Nav from "./Nav";
+import QuickLinks from "./QuickLinks";
+import { theme } from "../../style/theme";
 export default function Header() {
   return (
-    <TopBar>
-      <NavWrapper>
-        <NavLeftSpoiler>
-          <Circle />
-        </NavLeftSpoiler>
-        <Nav />
-      </NavWrapper>
-    </TopBar>
+    <>
+      <QuickLinks />
+      <TopBar>
+        <NavWrapper>
+          <NavLeftSpoiler>
+            <Circle />
+          </NavLeftSpoiler>
+          <Nav />
+        </NavWrapper>
+      </TopBar>
+    </>
   );
 }
 
 const TopBar = styled.div`
+  grid-column: 2 / 2;
   width: 100%;
-  height: 150px;
-  background-color: blue;
+  height: 100px;
+  background-color: ${theme.primary};
   display: flex;
 `;
 
@@ -26,27 +32,28 @@ const NavWrapper = styled.div`
   justify-content: space-between;
   height: 75px;
   width: 100%;
-  background-color: red;
+  background-color: ${theme.secondary};
   align-self: flex-end;
 `;
 
 const NavLeftSpoiler = styled.div`
   width: 15%;
   height: 100%;
-  background-color: blue;
+  background-color: ${theme.primary};
   display: flex;
   flex-direction: column;
 `;
 
 const Circle = styled.div`
-  box-shadow: inset 5px 0px 0px 0px #000;
-  height: 120px;
-  width: 20%;
-  background-color: red;
-  border-radius: 50%;
-  transform: translate(30%, 62.5%);
-  position: absolute;
-  top: 0;
-  left: 0;
+  box-shadow: inset 1px 1px 0px 0px #000;
+  height: 100%;
+  width: 50%;
+  position: relative;
+  background-color: ${theme.secondary};
+  border-radius: 50% 0% 0% 50%;
+  transform: scale(2);
+
+  top: 49%;
+  right: -83%;
   z-index: 1;
 `;

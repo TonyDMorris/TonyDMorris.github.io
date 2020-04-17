@@ -1,11 +1,19 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { theme } from "./../../style/theme";
 import { device } from "../../style/DeviceSizes";
 export default function NavButton({ icon, text }) {
   return (
     <NavLink>
-      <FontAwesomeIcon style={{ width: "80%", height: "60%" }} icon={icon} />
+      <FontAwesomeIcon
+        style={{
+          width: "80%",
+          height: "60%",
+          color: `${theme.extra}`,
+        }}
+        icon={icon}
+      />
       <LinkText>{text}</LinkText>
     </NavLink>
   );
@@ -19,10 +27,8 @@ const NavLink = styled.div`
   box-sizing: border-box;
   border: solid 2px black;
   height: 95%;
-  width: 16vw;
-  @media ${device.mobileL} {
-    padding-top: 8%;
-  }
+  width: 10vw;
+  background-color: ${theme.primaryContrast};
 `;
 
 const LinkText = styled.div`
