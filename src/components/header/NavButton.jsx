@@ -8,9 +8,11 @@ export default function NavButton({ icon, text }) {
     <NavLink>
       <FontAwesomeIcon
         style={{
+          margin: "2px",
+          padding: "0px",
           width: "80%",
           height: "60%",
-          color: `${theme.extra}`,
+          color: `${theme.text}`,
         }}
         icon={icon}
       />
@@ -20,23 +22,33 @@ export default function NavButton({ icon, text }) {
 }
 
 const NavLink = styled.div`
+  @media ${device.mobileL} {
+    width: 25%;
+  }
+  width: 15%;
   align-self: flex-end;
   justify-self: flex-end;
   text-align: center;
-  padding-top: 5px;
-  box-sizing: border-box;
-  border: solid 2px black;
-  height: 95%;
-  width: 10vw;
-  background-color: ${theme.primaryContrast};
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12),
+    0 0px 4px rgba(0, 0, 0, 0.12), 0 0px 8px rgba(0, 0, 0, 0.12),
+    0 0px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  border-color: ${theme.secondaryContrast};
+  border-top: solid 2px black;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  height: 90%;
+  border-radius: 5px 5px 0px 0px;
+  background-color: ${theme.secondary};
 `;
 
 const LinkText = styled.div`
   width: 100%;
-  border: solid 1px black;
-  margin-top: 5px;
+  border-top: ridge 1px ${theme.secondaryContrast};
+  border-color: ${theme.extra};
   font-family: JetBrainsMono;
-  font-weight: 900;
+  color: "#4B4B4C";
+  padding-bottom: 1px;
   @media ${device.mobileL} {
     display: none;
   }

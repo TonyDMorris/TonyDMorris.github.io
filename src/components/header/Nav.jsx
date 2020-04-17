@@ -21,7 +21,7 @@ export default function Nav() {
 
 const NavContainer = styled.div`
   display: flex;
-  box-shadow: inset 0px 2px 0px 0px #000;
+  border-radius: 5px 5px 5px 5px;
   width: 80%;
   height: 100%;
   display: flex;

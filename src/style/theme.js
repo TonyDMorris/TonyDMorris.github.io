@@ -4,4 +4,5 @@ export const theme = {
   secondary: "#BDE3FF",
   secondaryContrast: "#5E7280",
   extra: "#5A9CCC",
+  text: "#4B4B4C",
 };
