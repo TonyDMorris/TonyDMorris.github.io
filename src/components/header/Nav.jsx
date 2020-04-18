@@ -1,6 +1,7 @@
 import React from "react";
 import NavButton from "./NavButton";
 import styled from "styled-components";
+
 import {
   faAddressCard,
   faBriefcase,
@@ -21,7 +22,7 @@ export default function Nav() {
 
 const NavContainer = styled.div`
   display: flex;
-  border-radius: 5px 5px 5px 5px;
+
   width: 80%;
   height: 100%;
   display: flex;

@@ -25,7 +25,7 @@ const NavLink = styled.div`
   @media ${device.mobileL} {
     width: 25%;
   }
-  width: 15%;
+  width: 20%;
   align-self: flex-end;
   justify-self: flex-end;
   text-align: center;
@@ -33,13 +33,11 @@ const NavLink = styled.div`
     0 0px 4px rgba(0, 0, 0, 0.12), 0 0px 8px rgba(0, 0, 0, 0.12),
     0 0px 16px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  border-color: ${theme.secondaryContrast};
-  border-top: solid 2px black;
-  border-left: solid 2px black;
-  border-right: solid 2px black;
-  height: 90%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 75%;
   border-radius: 5px 5px 0px 0px;
-  background-color: ${theme.secondary};
+  ${theme.gradientExtra}
 `;
 
 const LinkText = styled.div`

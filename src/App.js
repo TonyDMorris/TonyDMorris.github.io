@@ -23,16 +23,19 @@ const Wrapper = styled.div`
   @media ${device.laptop} {
     grid-column: 1/1;
   }
+  ${theme.gradientHeaderPrimary};
 `;
 const Content = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   position: relative;
-  border: solid 10px ${theme.extra};
+
   z-index: 3;
   height: 100px;
-  background-color: ${theme.primary};
+  ${theme.gradientHeaderPrimary};
+  background-position-x: 0px;
+  background-repeat: no-repeat;
 `;
 
 const Body = styled.div`
