@@ -28,14 +28,11 @@ const Wrapper = styled.div`
 const Content = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 10px;
   position: relative;
 
   z-index: 3;
-  height: 100px;
   ${theme.gradientHeaderPrimary};
-  background-position-x: 0px;
-  background-repeat: no-repeat;
 `;
 
 const Body = styled.div`
