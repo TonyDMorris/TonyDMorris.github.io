@@ -6,7 +6,7 @@ import { device } from "../../style/DeviceSizes";
 export default function Bio({ bio, src }) {
   return (
     <>
-      <img src={src} />
+      <ProfilePicture src={src} />
       {bio ? (
         bio
           .split("\n")
@@ -38,4 +38,10 @@ const Paragraph = styled.div`
   font-family: JetBrainsMono;
   border-radius: 5px 5px 5px 5px;
   ${theme.gradientExtra}
+`;
+
+const ProfilePicture = styled(Paragraph)`
+  background-image: url(${(props) => `http://64.227.37.198${props.src}`});
+  height: 100px;
+  width: 100px;
 `;
