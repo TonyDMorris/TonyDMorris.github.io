@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     const getData = () => {
       return Axios.get("http://64.227.37.198/portfolis/1").then(({ data }) => {
-        console.log(data);
         return data;
       });
     };
