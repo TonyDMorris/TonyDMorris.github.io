@@ -85,7 +85,8 @@ const Circle = styled.div`
 const BuisnessLogo = styled.div`
   padding: 5px;
   height: 50%;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
   font-size: 24px;
   font-weight: 900;
   color: ${theme.secondary};

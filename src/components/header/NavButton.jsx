@@ -29,7 +29,7 @@ const NavLink = styled.div`
     transform: scale(1.05);
   }
   transition: all 0.2s ease-in-out;
-  width: 20%;
+  width: 23%;
   align-self: flex-end;
   justify-self: flex-end;
   text-align: center;
