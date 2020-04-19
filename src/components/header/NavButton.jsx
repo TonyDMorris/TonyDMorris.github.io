@@ -25,6 +25,10 @@ const NavLink = styled.div`
   @media ${device.mobileL} {
     width: 25%;
   }
+  :hover {
+    transform: scale(1.05);
+  }
+  transition: all 0.2s ease-in-out;
   width: 20%;
   align-self: flex-end;
   justify-self: flex-end;
