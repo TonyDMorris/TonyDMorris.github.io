@@ -55,6 +55,9 @@ border-radius: 5px 5px 5px 5px;
 `;
 
 const NavLeftSpoiler = styled.div`
+  @media ${device.mobileL} {
+    display: none;
+  }
   ${theme.gradientHeaderPrimary}
   width: 15%;
   height: 100%;
@@ -65,6 +68,9 @@ const NavLeftSpoiler = styled.div`
 `;
 
 const Circle = styled.div`
+  @media ${device.mobileL} {
+    display: none;
+  }
   ${theme.gradientHeaderSecondary}
   background-size: 100vw;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12),

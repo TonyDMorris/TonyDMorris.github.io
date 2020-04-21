@@ -1,6 +1,8 @@
 import React from "react";
 import NavButton from "./NavButton";
 import styled from "styled-components";
+import { device } from "../../style/DeviceSizes";
+import { Link } from "@reach/router";
 
 import {
   faAddressCard,
@@ -12,17 +14,19 @@ import {
 export default function Nav() {
   return (
     <NavContainer>
-      <NavButton text="Bio" icon={faSmile}></NavButton>
-      <NavButton text="CV" icon={faFileAlt}></NavButton>
-      <NavButton text="Projects" icon={faCode}></NavButton>
-      <NavButton text="Contact" icon={faAddressCard}></NavButton>
+      <NavButton to="/bio" text="Bio" icon={faSmile}></NavButton>
+      <NavButton to="cv" text="CV" icon={faFileAlt}></NavButton>
+      <NavButton to="/projects" text="Projects" icon={faCode}></NavButton>
+      <NavButton to="/contact" text="Contact" icon={faAddressCard}></NavButton>
     </NavContainer>
   );
 }
 
 const NavContainer = styled.div`
   display: flex;
-
+  @media ${device.mobileL} {
+    width: 100%;
+  }
   width: 80%;
   height: 100%;
   display: flex;

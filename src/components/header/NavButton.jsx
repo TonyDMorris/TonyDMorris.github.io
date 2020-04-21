@@ -3,20 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { theme } from "./../../style/theme";
 import { device } from "../../style/DeviceSizes";
-export default function NavButton({ icon, text }) {
+import { Link } from "@reach/router";
+export default function NavButton({ icon, text, to }) {
   return (
     <NavLink>
-      <FontAwesomeIcon
-        style={{
-          margin: "2px",
-          padding: "0px",
-          width: "80%",
-          height: "60%",
-          color: `${theme.text}`,
-        }}
-        icon={icon}
-      />
-      <LinkText>{text}</LinkText>
+      <Link style={{ textDecoration: "none", color: "#4B4B4C" }} to={`${to}`}>
+        <FontAwesomeIcon
+          style={{
+            margin: "2px",
+            padding: "0px",
+            width: "80%",
+            height: "60%",
+            color: `${theme.text}`,
+          }}
+          icon={icon}
+        />
+        <LinkText>{text}</LinkText>
+      </Link>
     </NavLink>
   );
 }
@@ -45,12 +48,14 @@ const NavLink = styled.div`
 `;
 
 const LinkText = styled.div`
+  text-decoration: none;
   width: 100%;
   border-top: ridge 1px ${theme.secondaryContrast};
   border-color: ${theme.extra};
   font-family: JetBrainsMono;
-  color: "#4B4B4C";
+
   padding-bottom: 1px;
+
   @media ${device.mobileL} {
     display: none;
   }

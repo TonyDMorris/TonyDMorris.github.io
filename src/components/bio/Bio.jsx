@@ -32,7 +32,7 @@ const Container = styled.div`
   text-align: center;
 `;
 const Paragraph = styled.div`
-  padding: 10px;
+  padding: 3%;
 
   margin-top: 5%;
   margin-left: 20%;
@@ -41,12 +41,13 @@ const Paragraph = styled.div`
     margin: 5%;
   }
   color: ${theme.primary};
-  font-family: JetBrainsMono;
-  border-radius: 5px 5px 5px 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+
   ${theme.gradientExtra}
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
-    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
-    0 16px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.12), 0 2px 2px rgba(255, 255, 255, 0.12),
+    0 4px 4px rgba(255, 255, 255, 0.12), 0 8px 8px rgba(255, 255, 255, 0.12),
+    0 16px 16px rgba(255, 255, 255, 0.12);
 `;
 
 const ProfilePicture = styled.div`

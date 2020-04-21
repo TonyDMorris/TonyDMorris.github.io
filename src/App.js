@@ -26,6 +26,7 @@ function App() {
           <Content>
             <Router>
               <Bio
+                default
                 src={
                   content && `http://64.227.37.198${content.bio.Images[0].url}`
                 }
