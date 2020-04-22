@@ -7,7 +7,6 @@ import { device } from "./../../style/DeviceSizes";
 export default function Header() {
   return (
     <>
-      <QuickLinks />
       <TopBar>
         <NavWrapper>
           <NavLeftSpoiler>

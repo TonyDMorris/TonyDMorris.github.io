@@ -27,38 +27,35 @@ export default function Bio({ bio, src }) {
 const Container = styled.div`
   width: 100%;
   display: flex;
+
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
 `;
 const Paragraph = styled.div`
-  padding: 3%;
-
-  margin-top: 5%;
-  margin-left: 20%;
-  margin-right: 20%;
+  align-self: center;
+  padding: 10px;
+  width: 50%;
   @media ${device.mobileL} {
-    margin: 5%;
+    width: 90%;
   }
-  color: ${theme.primary};
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
 
-  ${theme.gradientExtra}
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.12), 0 2px 2px rgba(255, 255, 255, 0.12),
-    0 4px 4px rgba(255, 255, 255, 0.12), 0 8px 8px rgba(255, 255, 255, 0.12),
-    0 16px 16px rgba(255, 255, 255, 0.12);
+  text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.2);
+  margin-top: 5%;
+  color: ${theme.primaryContrast};
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 `;
 
 const ProfilePicture = styled.div`
   background-image: url(${(props) => props.src});
-  background-position: 15px;
-  margin-left: 20%;
+  background-position: center;
+  align-self: center;
   margin-top: 5%;
-  background-size: 200%;
+  background-size: contain;
   background-repeat: no-repeat;
-  height: 30vw;
-  width: 60%;
+  height: 20vw;
+  width: 40%;
   @media ${device.mobileL} {
     width: 90%;
     margin-left: 3%;

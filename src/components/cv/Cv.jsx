@@ -3,12 +3,13 @@ import styled from "styled-components";
 import { Document, Page } from "react-pdf/dist/entry.webpack";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import { pdfjs } from "react-pdf";
+import { device } from "../../style/DeviceSizes";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Cv({ file }) {
   const [pages, setPages] = useState([]);
-  const [width, SetWidth] = useState(window.innerWidth / 1000);
+  const [width, SetWidth] = useState(window.innerWidth / 1200);
   useEffect(() => {
-    SetWidth(window.innerWidth / 1000);
+    SetWidth(window.innerWidth / 1200);
   }, [window.innerWidth]);
   const onDocumentLoadSuccess = ({ numPages }) => {
     const newArray = [];
@@ -20,10 +21,25 @@ export default function Cv({ file }) {
   return (
     <Pdf file={file} onLoadSuccess={onDocumentLoadSuccess}>
       {pages.map((pageNum) => {
-        return <Page scale={width} key={pageNum} pageNumber={pageNum} />;
+        return <PdfPage scale={width} key={pageNum} pageNumber={pageNum} />;
       })}
     </Pdf>
   );
 }
 
-const Pdf = styled(Document)``;
+const Pdf = styled(Document)`
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  width: 100%;
+  @media ${device.mobileL} {
+    margin: 5%;
+  }
+`;
+const PdfPage = styled(Page)`
+  margin-top: 5%;
+
+  align-self: center;
+`;

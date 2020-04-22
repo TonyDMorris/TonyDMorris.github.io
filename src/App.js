@@ -28,19 +28,14 @@ function App() {
         <Wrapper>
           <Header />
           <Content>
-            <Router>
-              <Bio
-                default
-                src={content && `${baseURL}${content.bio.Images[0].url}`}
-                bio={content && content.bio.body}
-                path="/bio"
-              />
+            <Bio
+              default
+              src={content && `${baseURL}${content.bio.Images[0].url}`}
+              bio={content && content.bio.body}
+              path="/bio"
+            />
 
-              <Cv
-                path="/cv"
-                file={content && `${baseURL}${content.cv.cv.url}`}
-              />
-            </Router>
+            <Cv path="/cv" file={content && `${baseURL}${content.cv.cv.url}`} />
           </Content>
         </Wrapper>
       </Body>
@@ -56,12 +51,12 @@ const Wrapper = styled.div`
   }
   ${theme.gradientHeaderPrimary};
 `;
-const Content = styled.div`
+const Content = styled(Router)`
   width: 100%;
   grid-column: 2/2;
-  display: flex
+  display: flex;
   position: relative;
-
+  min-height: 100vh;
   z-index: 3;
   ${theme.gradientHeaderPrimary};
 `;

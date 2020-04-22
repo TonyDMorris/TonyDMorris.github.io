@@ -15,6 +15,7 @@ export default function NavButton({ icon, text, to }) {
             width: "80%",
             height: "60%",
             color: `${theme.text}`,
+            textShadow: "2px 4px 3px rgba(0, 0, 0, 0.2)",
           }}
           icon={icon}
         />
@@ -25,6 +26,7 @@ export default function NavButton({ icon, text, to }) {
 }
 
 const NavLink = styled.div`
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.2);
   @media ${device.mobileL} {
     width: 25%;
   }
@@ -48,6 +50,7 @@ const NavLink = styled.div`
 `;
 
 const LinkText = styled.div`
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   width: 100%;
   border-top: ridge 1px ${theme.secondaryContrast};
