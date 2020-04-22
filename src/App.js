@@ -4,14 +4,18 @@ import Header from "./components/header/Header";
 import { device } from "./style/DeviceSizes";
 import { theme } from "./style/theme";
 import { Router, Link } from "@reach/router";
+import Cv from "./components/cv/Cv";
 import Bio from "./components/bio/Bio";
 import "./index.css";
 import Axios from "axios";
 function App() {
   const [content, setContent] = useState(undefined);
+  const baseURL = "http://64.227.37.198";
+
   useEffect(() => {
     const getData = () => {
-      return Axios.get("http://64.227.37.198/portfolis/1").then(({ data }) => {
+      return Axios.get(`${baseURL}/portfolis/1`).then(({ data }) => {
+        console.log(data);
         return data;
       });
     };
@@ -27,11 +31,14 @@ function App() {
             <Router>
               <Bio
                 default
-                src={
-                  content && `http://64.227.37.198${content.bio.Images[0].url}`
-                }
+                src={content && `${baseURL}${content.bio.Images[0].url}`}
                 bio={content && content.bio.body}
                 path="/bio"
+              />
+
+              <Cv
+                path="/cv"
+                file={content && `${baseURL}${content.cv.cv.url}`}
               />
             </Router>
           </Content>
@@ -51,7 +58,8 @@ const Wrapper = styled.div`
 `;
 const Content = styled.div`
   width: 100%;
-
+  grid-column: 2/2;
+  display: flex
   position: relative;
 
   z-index: 3;
