@@ -20,6 +20,7 @@ function App() {
     const getData = () => {
       return Axios.get(`${baseURL}/portfolis/1`).then(({ data }) => {
         return data;
+        console.log(data);
       });
     };
     getData().then(setContent);
@@ -40,7 +41,12 @@ function App() {
 
             <Cv path="/cv" file={content && `${baseURL}${content.cv.cv.url}`} />
 
-            <ContactInfo path="/contact" />
+            <ContactInfo
+              path="/contact"
+              phoneNumber={content && content.contact_info.phone_number}
+              linkedInAddress={content && content.contact_info.linkedin}
+              email={content && content.contact_info.email}
+            />
           </ContentRouter>
         </Wrapper>
       </Body>

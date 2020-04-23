@@ -9,9 +9,22 @@ export default function ContactInfo({ phoneNumber, linkedInAddress, email }) {
   return (
     <Contact>
       <ContactText>Contact Me</ContactText>
-      <ContactSource icon={faAt} />
-      <ContactSource icon={faPhone} />
-      <ContactSource icon={faLinkedin} />
+      <ContactInfoLine>
+        <ContactSource icon={faAt} />
+        <ContactInfoLineContent fontSize={2}>{email}</ContactInfoLineContent>
+      </ContactInfoLine>
+      <ContactInfoLine>
+        <ContactSource icon={faPhone} />
+        <ContactInfoLineContent fontSize={4}>
+          {phoneNumber}
+        </ContactInfoLineContent>
+      </ContactInfoLine>
+      <ContactInfoLine>
+        <ContactSource icon={faLinkedin} />
+        <ContactInfoLineContent fontSize={1.5}>
+          {linkedInAddress}
+        </ContactInfoLineContent>
+      </ContactInfoLine>
     </Contact>
   );
 }
@@ -34,4 +47,17 @@ const ContactText = styled.div`
 const ContactSource = styled(FontAwesomeIcon)`
   font-size: 3vw;
   margin: 5%;
+`;
+
+const ContactInfoLine = styled.div`
+  align-self: flex-start;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+
+const ContactInfoLineContent = styled.div`
+  justify-self: center;
+  align-self: center;
+  font-size: ${(props) => `${props.fontSize}vw`};
 `;
