@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import Header from "./components/header/Header";
-import { device } from "./style/DeviceSizes";
-import { theme } from "./style/theme";
-import { Router, Link } from "@reach/router";
-import Cv from "./components/cv/Cv";
-import Bio from "./components/bio/Bio";
 import "./index.css";
+
+import React, { useEffect, useState } from "react";
+
 import Axios from "axios";
+import Bio from "./components/bio/Bio";
+import ContactInfo from "./components/contact/ContactInfo";
+import Cv from "./components/cv/Cv";
+import Header from "./components/header/Header";
+import { Router } from "@reach/router";
+import { device } from "./style/DeviceSizes";
+import styled from "styled-components";
+import { theme } from "./style/theme";
+
 function App() {
   const [content, setContent] = useState(undefined);
   const baseURL = "http://64.227.37.198";
@@ -15,7 +19,6 @@ function App() {
   useEffect(() => {
     const getData = () => {
       return Axios.get(`${baseURL}/portfolis/1`).then(({ data }) => {
-        console.log(data);
         return data;
       });
     };
@@ -27,7 +30,7 @@ function App() {
       <Body>
         <Wrapper>
           <Header />
-          <Content>
+          <ContentRouter primary={false}>
             <Bio
               default
               src={content && `${baseURL}${content.bio.Images[0].url}`}
@@ -36,7 +39,9 @@ function App() {
             />
 
             <Cv path="/cv" file={content && `${baseURL}${content.cv.cv.url}`} />
-          </Content>
+
+            <ContactInfo path="/contact" />
+          </ContentRouter>
         </Wrapper>
       </Body>
     </div>
@@ -51,11 +56,12 @@ const Wrapper = styled.div`
   }
   ${theme.gradientHeaderPrimary};
 `;
-const Content = styled(Router)`
+const ContentRouter = styled(Router)`
   width: 100%;
+
   grid-column: 2/2;
   display: flex;
-  position: relative;
+  flex-direction: column;
   min-height: 100vh;
   z-index: 3;
   ${theme.gradientHeaderPrimary};

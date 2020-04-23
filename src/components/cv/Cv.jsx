@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Document, Page } from "react-pdf/dist/entry.webpack";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -7,10 +7,8 @@ import { device } from "../../style/DeviceSizes";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Cv({ file }) {
   const [pages, setPages] = useState([]);
-  const [width, SetWidth] = useState(window.innerWidth / 1200);
-  useEffect(() => {
-    SetWidth(window.innerWidth / 1200);
-  }, [window.innerWidth]);
+  const width = window.innerWidth / 1200;
+
   const onDocumentLoadSuccess = ({ numPages }) => {
     const newArray = [];
     for (let i = 0; i < numPages; i++) {

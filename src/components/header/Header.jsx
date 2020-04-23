@@ -1,9 +1,8 @@
-import React from "react";
-import styled from "styled-components";
 import Nav from "./Nav";
-import QuickLinks from "./QuickLinks";
-import { theme } from "../../style/theme";
+import React from "react";
 import { device } from "./../../style/DeviceSizes";
+import styled from "styled-components";
+import { theme } from "../../style/theme";
 export default function Header() {
   return (
     <>

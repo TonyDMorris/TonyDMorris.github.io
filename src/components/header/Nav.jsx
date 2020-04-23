@@ -1,16 +1,15 @@
-import React from "react";
-import NavButton from "./NavButton";
-import styled from "styled-components";
-import { device } from "../../style/DeviceSizes";
-import { Link } from "@reach/router";
-
 import {
   faAddressCard,
-  faBriefcase,
-  faFileAlt,
   faCode,
+  faFileAlt,
   faSmile,
 } from "@fortawesome/free-solid-svg-icons";
+
+import NavButton from "./NavButton";
+import React from "react";
+import { device } from "../../style/DeviceSizes";
+import styled from "styled-components";
+
 export default function Nav() {
   return (
     <NavContainer>

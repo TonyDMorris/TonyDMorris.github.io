@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import ReactMarkDown from "react-markdown";
-import { theme } from "../../style/theme";
 import { device } from "../../style/DeviceSizes";
+import styled from "styled-components";
+import { theme } from "../../style/theme";
 export default function Bio({ bio, src }) {
   return (
     <Container>

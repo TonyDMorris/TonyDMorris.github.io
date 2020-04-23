@@ -1,9 +1,9 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "@reach/router";
+import React from "react";
+import { device } from "../../style/DeviceSizes";
 import styled from "styled-components";
 import { theme } from "./../../style/theme";
-import { device } from "../../style/DeviceSizes";
-import { Link } from "@reach/router";
 export default function NavButton({ icon, text, to }) {
   return (
     <NavLink>
