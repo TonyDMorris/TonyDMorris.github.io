@@ -2,6 +2,7 @@ import { faAt, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { device } from "../../style/DeviceSizes";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 
@@ -31,6 +32,10 @@ export default function ContactInfo({ phoneNumber, linkedInAddress, email }) {
 
 const Contact = styled.div`
   width: 50%;
+  @media ${device.mobileL} {
+    width: 90%;
+  }
+
   border: solid 2px black;
   align-self: center;
   flex-direction: column;
@@ -43,6 +48,9 @@ const Contact = styled.div`
 const ContactText = styled.div`
   align-self: center;
   font-size: 5vw;
+  @media ${device.mobileL} {
+    font-size: 8vw;
+  }
 `;
 const ContactSource = styled(FontAwesomeIcon)`
   font-size: 3vw;
@@ -59,5 +67,8 @@ const ContactInfoLine = styled.div`
 const ContactInfoLineContent = styled.div`
   justify-self: center;
   align-self: center;
-  font-size: ${(props) => `${props.fontSize}vw`};
+
+  @media ${device.mobileL} {
+    font-size: ${(props) => `${props.fontSize + 3}vw`};
+  }
 `;
