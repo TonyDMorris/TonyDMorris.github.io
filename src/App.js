@@ -14,7 +14,7 @@ import { theme } from "./style/theme";
 
 function App() {
   const [content, setContent] = useState(undefined);
-  const baseURL = "http://64.227.37.198";
+  const baseURL = "https://api.towidomo.dev";
 
   useEffect(() => {
     const getData = () => {
