@@ -15,7 +15,7 @@ export default function Header() {
         </NavWrapper>
         <BuisnessLogo>
           TOWIDOMO <br />
-          .TECH
+          .DEV
         </BuisnessLogo>
       </TopBar>
     </>
