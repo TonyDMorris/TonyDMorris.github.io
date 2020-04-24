@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/towidomo/d179ddd821040f2eb41f.worker.js.LICENSE.txt"
   },
   {
-    "revision": "eda9b89c9655f0b2dcc3b8c4fb314619",
+    "revision": "6d40610046a11516a75d71ede63c60c1",
     "url": "/towidomo/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/towidomo/static/css/2.c83c8d54.chunk.css"
   },
   {
-    "revision": "1ab3f719be9dc42ae012",
+    "revision": "edd030f737876f12c3e1",
     "url": "/towidomo/static/css/main.dff13ae3.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/towidomo/static/js/2.8a950f45.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1ab3f719be9dc42ae012",
-    "url": "/towidomo/static/js/main.16502fda.chunk.js"
+    "revision": "edd030f737876f12c3e1",
+    "url": "/towidomo/static/js/main.d9cca0f3.chunk.js"
   },
   {
     "revision": "480df6686e3224a79c1e",
