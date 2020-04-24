@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/towidomo/static/css/main.dff13ae3.chunk.css",
+    "main.js": "/towidomo/static/js/main.16502fda.chunk.js",
+    "main.js.map": "/towidomo/static/js/main.16502fda.chunk.js.map",
+    "runtime-main.js": "/towidomo/static/js/runtime-main.b39f589f.js",
+    "runtime-main.js.map": "/towidomo/static/js/runtime-main.b39f589f.js.map",
+    "static/css/2.c83c8d54.chunk.css": "/towidomo/static/css/2.c83c8d54.chunk.css",
+    "static/js/2.8a950f45.chunk.js": "/towidomo/static/js/2.8a950f45.chunk.js",
+    "static/js/2.8a950f45.chunk.js.map": "/towidomo/static/js/2.8a950f45.chunk.js.map",
+    "d179ddd821040f2eb41f.worker.js": "/towidomo/d179ddd821040f2eb41f.worker.js",
+    "d179ddd821040f2eb41f.worker.js.LICENSE.txt": "/towidomo/d179ddd821040f2eb41f.worker.js.LICENSE.txt",
+    "d179ddd821040f2eb41f.worker.js.map": "/towidomo/d179ddd821040f2eb41f.worker.js.map",
+    "index.html": "/towidomo/index.html",
+    "precache-manifest.c3cf5ffd77d07768d9f2b2d65f69a1e7.js": "/towidomo/precache-manifest.c3cf5ffd77d07768d9f2b2d65f69a1e7.js",
+    "service-worker.js": "/towidomo/service-worker.js",
+    "static/css/2.c83c8d54.chunk.css.map": "/towidomo/static/css/2.c83c8d54.chunk.css.map",
+    "static/css/main.dff13ae3.chunk.css.map": "/towidomo/static/css/main.dff13ae3.chunk.css.map",
+    "static/js/2.8a950f45.chunk.js.LICENSE.txt": "/towidomo/static/js/2.8a950f45.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/towidomo/static/media/JetBrainsMono-ExtraBold.131dbc72.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b39f589f.js",
+    "static/css/2.c83c8d54.chunk.css",
+    "static/js/2.8a950f45.chunk.js",
+    "static/css/main.dff13ae3.chunk.css",
+    "static/js/main.16502fda.chunk.js"
+  ]
+}
