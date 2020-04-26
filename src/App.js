@@ -7,6 +7,7 @@ import Bio from "./components/bio/Bio";
 import ContactInfo from "./components/contact/ContactInfo";
 import Cv from "./components/cv/Cv";
 import Header from "./components/header/Header";
+import Projects from "./components/projects/Projects";
 import { Router } from "@reach/router";
 import { device } from "./style/DeviceSizes";
 import styled from "styled-components";
@@ -19,8 +20,8 @@ function App() {
   useEffect(() => {
     const getData = () => {
       return Axios.get(`${baseURL}/portfolis/1`).then(({ data }) => {
-        return data;
         console.log(data);
+        return data;
       });
     };
     getData().then(setContent);
@@ -31,23 +32,25 @@ function App() {
       <Body>
         <Wrapper>
           <Header />
-          <ContentRouter primary={false}>
-            <Bio
-              default
-              src={content && `${baseURL}${content.bio.Images[0].url}`}
-              bio={content && content.bio.body}
-              path="/bio"
-            />
+          {content && (
+            <ContentRouter primary={false}>
+              <Bio
+                default
+                src={`${baseURL}${content.bio.Images[0].url}`}
+                bio={content.bio.body}
+                path="/bio"
+              />
 
-            <Cv path="/cv" file={content && `${baseURL}${content.cv.cv.url}`} />
-
-            <ContactInfo
-              path="/contact"
-              phoneNumber={content && content.contact_info.phone_number}
-              linkedInAddress={content && content.contact_info.linkedin}
-              email={content && content.contact_info.email}
-            />
-          </ContentRouter>
+              <Cv path="/cv" file={`${baseURL}${content.cv.cv.url}`} />
+              <Projects path="/projects" projects={content.projects} />
+              <ContactInfo
+                path="/contact"
+                phoneNumber={content.contact_info.phone_number}
+                linkedInAddress={content.contact_info.linkedin}
+                email={content.contact_info.email}
+              />
+            </ContentRouter>
+          )}
         </Wrapper>
       </Body>
     </div>

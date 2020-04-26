@@ -1,6 +1,6 @@
 {
   "name": "towidomo",
-  "homepage": "http://tonydmorris.github.io/towidomo",
+  "homepage": "http://tonydmorris.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,7 @@
     "axios": "^0.19.2",
     "gh-pages": "^2.2.0",
     "react": "^16.13.1",
+    "react-collapse": "^5.0.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
     "react-pdf": "^4.1.0",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
