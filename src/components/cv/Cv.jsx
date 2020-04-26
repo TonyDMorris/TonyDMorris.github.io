@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Document, Page } from "react-pdf/dist/entry.webpack";
 import "react-pdf/dist/Page/AnnotationLayer.css";
-import { pdfjs } from "react-pdf";
+
+import { Document, Page } from "react-pdf/dist/entry.webpack";
+import React, { useState } from "react";
+
 import { device } from "../../style/DeviceSizes";
+import { pdfjs } from "react-pdf";
+import styled from "styled-components";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Cv({ file }) {
   const [pages, setPages] = useState([]);
@@ -38,6 +40,8 @@ const Pdf = styled(Document)`
 `;
 const PdfPage = styled(Page)`
   margin-top: 5%;
-
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12),
+    0 0px 4px rgba(0, 0, 0, 0.12), 0 0px 8px rgba(0, 0, 0, 0.12),
+    0 0px 16px rgba(0, 0, 0, 0.12);
   align-self: center;
 `;
