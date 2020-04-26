@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { presets } from "react-motion";
 import styled from "styled-components";
 
 export default function Project({
@@ -7,12 +9,23 @@ export default function Project({
   title,
   productionURL,
   repoURL,
+  id,
 }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <ProjectWrapper>
       <ProjectImage src={src} />
       <ProjectTitle>{title}</ProjectTitle>
-      <ProjectDescription> {description}</ProjectDescription>
+
+      <ProjectDescription isOpen={isOpen}> {description}</ProjectDescription>
+
+      <CollapseButton
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+      >
+        {isOpen ? "less" : "more..."}
+      </CollapseButton>
       <ProjectLink href={productionURL}>visit</ProjectLink>
       <ProjectLink href={repoURL}>repo</ProjectLink>
     </ProjectWrapper>
@@ -20,6 +33,8 @@ export default function Project({
 }
 
 const ProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   text-align: center;
   align-self: center;
   justify-self: center;
@@ -38,7 +53,15 @@ const ProjectTitle = styled.div`
 `;
 
 const ProjectDescription = styled.div`
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  padding: ${(props) => (props.isOpen ? "10px 0" : "0")};
+  max-height: ${(props) => (props.isOpen ? "100%" : "0")};
   width: 350px;
 `;
 
 const ProjectLink = styled.a``;
+
+const CollapseButton = styled.div`
+  justify-self: flex-end;
+`;

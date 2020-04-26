@@ -66,10 +66,10 @@ export default function Projects({ projects }) {
           />
         );
       })}
-      {projects.map((project) => {
+      {projects.map((project, i) => {
         return (
           <Project
-            key={project.id}
+            key={i}
             src={`${baseURL}${project.image.url}`}
             description={project.description}
             title={project.title}
