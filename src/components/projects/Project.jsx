@@ -33,6 +33,7 @@ export default function Project({
 }
 
 const ProjectWrapper = styled.div`
+height: 400px;
   width: 350px;
   @media ${device.tablet} {
     width: 100%;
@@ -63,12 +64,17 @@ const ProjectImage = styled.img`
     inset 0 0px 8px rgba(0, 0, 0, 0.12), inset 0 0px 16px rgba(0, 0, 0, 0.12);
 
   border: solid 1px #b6764b;
+  :hover {
+    border: solid 2px ${theme.primary};
+  }
 `;
 
 const ProjectTitle = styled.div``;
 
 const ProjectDescription = styled.div`
   padding: 5% 5% 0% 5%;
+  overflow: hidden;
+  overflow-y: scroll;
 `;
 
 const ProjectLink = styled.a`
