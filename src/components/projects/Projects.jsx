@@ -18,66 +18,6 @@ export default function Projects({ projects }) {
           />
         );
       })}
-      {projects.map((project) => {
-        return (
-          <Project
-            key={project.id}
-            src={`${baseURL}${project.image.url}`}
-            description={project.description}
-            title={project.title}
-            repoURL={project.repo_url}
-            productionURL={project.production_url}
-          />
-        );
-      })}
-      {projects.map((project) => {
-        return (
-          <Project
-            key={project.id}
-            src={`${baseURL}${project.image.url}`}
-            description={project.description}
-            title={project.title}
-            repoURL={project.repo_url}
-            productionURL={project.production_url}
-          />
-        );
-      })}
-      {projects.map((project) => {
-        return (
-          <Project
-            key={project.id}
-            src={`${baseURL}${project.image.url}`}
-            description={project.description}
-            title={project.title}
-            repoURL={project.repo_url}
-            productionURL={project.production_url}
-          />
-        );
-      })}
-      {projects.map((project) => {
-        return (
-          <Project
-            key={project.id}
-            src={`${baseURL}${project.image.url}`}
-            description={project.description}
-            title={project.title}
-            repoURL={project.repo_url}
-            productionURL={project.production_url}
-          />
-        );
-      })}
-      {projects.map((project, i) => {
-        return (
-          <Project
-            key={i}
-            src={`${baseURL}${project.image.url}`}
-            description={project.description}
-            title={project.title}
-            repoURL={project.repo_url}
-            productionURL={project.production_url}
-          />
-        );
-      })}
     </ProjectsWrapper>
   );
 }
@@ -90,5 +30,4 @@ const ProjectsWrapper = styled.div`
   justify-content: center;
   padding: 5px;
   flex-wrap: wrap;
-  border: solid 2px black;
 `;

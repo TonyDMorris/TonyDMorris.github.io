@@ -87,13 +87,14 @@ const Circle = styled.div`
 `;
 
 const BuisnessLogo = styled.div`
+  text-shadow: 2px 2px #d29573;
   padding: 5px;
   height: 50%;
   margin-left: 5px;
   margin-right: 10px;
   font-size: 24px;
   font-weight: 900;
-  color: ${theme.secondary};
+  color: #f1ece7;
   font-family: JetBrainsMono;
   justify-self: flex-end;
   align-self: flex-end;

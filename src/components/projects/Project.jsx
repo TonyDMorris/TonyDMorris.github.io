@@ -1,7 +1,10 @@
-import React, { useState } from "react";
-
-import { presets } from "react-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { device } from "../../style/DeviceSizes";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import { theme } from "./../../style/theme";
 
 export default function Project({
   src,
@@ -9,59 +12,96 @@ export default function Project({
   title,
   productionURL,
   repoURL,
-  id,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <ProjectWrapper>
-      <ProjectImage src={src} />
       <ProjectTitle>{title}</ProjectTitle>
-
-      <ProjectDescription isOpen={isOpen}> {description}</ProjectDescription>
-
-      <CollapseButton
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      >
-        {isOpen ? "less" : "more..."}
-      </CollapseButton>
-      <ProjectLink href={productionURL}>visit</ProjectLink>
-      <ProjectLink href={repoURL}>repo</ProjectLink>
+      <ProjectImage src={src} />
+      <ProjectDescription> {description}</ProjectDescription>
+      <ProjectLinksWrapper>
+        <ProjectLinkIcon fontSize="40" icon={faRocket} />
+        <ProjectLink target="_none" href={productionURL}>
+          Visit the project
+        </ProjectLink>
+        <ProjectLinkIcon fontSize="40" icon={faGithubAlt} />
+        <ProjectLink target="_none" href={repoURL}>
+          View the code
+        </ProjectLink>
+      </ProjectLinksWrapper>
     </ProjectWrapper>
   );
 }
 
 const ProjectWrapper = styled.div`
+  width: 350px;
+  @media ${device.tablet} {
+    width: 100%;
+  }
   display: flex;
   flex-direction: column;
   text-align: center;
   align-self: center;
   justify-self: center;
-  border: solid black 2px;
-  background-color: white;
+
   margin: 1%;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12),
+    0 0px 4px rgba(0, 0, 0, 0.12), 0 0px 8px rgba(0, 0, 0, 0.12),
+    0 0px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  ${theme.gradientExtra}
+  color: ${theme.text}
 `;
 
 const ProjectImage = styled.img`
-  width: 350px;
+  box-sizing: border-box;
   src: ${(props) => props.src};
+  height: auto;
+  width: 90%;
+  align-self: center;
+  box-shadow: inset 0 0px 1px rgba(0, 0, 0, 0.12),
+    inset 0 0px 2px rgba(0, 0, 0, 0.12), inset 0 0px 4px rgba(0, 0, 0, 0.12),
+    inset 0 0px 8px rgba(0, 0, 0, 0.12), inset 0 0px 16px rgba(0, 0, 0, 0.12);
+
+  border: solid 1px #b6764b;
 `;
 
-const ProjectTitle = styled.div`
-  width: 350px;
-`;
+const ProjectTitle = styled.div``;
 
 const ProjectDescription = styled.div`
-  transition: all 0.3s ease-out;
-  overflow: hidden;
-  padding: ${(props) => (props.isOpen ? "10px 0" : "0")};
-  max-height: ${(props) => (props.isOpen ? "100%" : "0")};
-  width: 350px;
+  padding: 5% 5% 0% 5%;
 `;
 
-const ProjectLink = styled.a``;
+const ProjectLink = styled.a`
+  text-decoration: none;
+  color: ${theme.text};
+  font-family: JetBrainsMono;
+  align-self: flex-end;
+  font-size: 16px;
+  :hover {
+    color: ${theme.primary};
+  }
+`;
 
-const CollapseButton = styled.div`
-  justify-self: flex-end;
+const ProjectLinksWrapper = styled.div`
+  align-self: center;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: solid 1px #f5f5f5;
+  box-sizing: border-box;
+  padding-top: 5%;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-top: 5px;
+`;
+
+const ProjectLinkIcon = styled(FontAwesomeIcon)`
+  font-size: ${(props) => `${props.fontSize}px`};
+  color: ${theme.text};
+  align-self: flex-end;
+  :hover {
+    color: ${theme.primary};
+  }
 `;
