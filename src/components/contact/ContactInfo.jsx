@@ -5,6 +5,7 @@ import React from "react";
 import { device } from "../../style/DeviceSizes";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
+import { theme } from "../../style/theme";
 
 export default function ContactInfo({ phoneNumber, linkedInAddress, email }) {
   return (
@@ -12,17 +13,19 @@ export default function ContactInfo({ phoneNumber, linkedInAddress, email }) {
       <ContactText>Contact Me</ContactText>
       <ContactInfoLine>
         <ContactSource icon={faAt} />
-        <ContactInfoLineContent fontSize={2}>{email}</ContactInfoLineContent>
+        <ContactInfoLineContent href={`mailto:${email}`} fontSize={2}>
+          {email}
+        </ContactInfoLineContent>
       </ContactInfoLine>
       <ContactInfoLine>
         <ContactSource icon={faPhone} />
-        <ContactInfoLineContent fontSize={4}>
+        <ContactInfoLineContent href={`tel:${phoneNumber}`} fontSize={4}>
           {phoneNumber}
         </ContactInfoLineContent>
       </ContactInfoLine>
       <ContactInfoLine>
         <ContactSource icon={faLinkedin} />
-        <ContactInfoLineContent fontSize={1.5}>
+        <ContactInfoLineContent href={linkedInAddress} fontSize={1.5}>
           {linkedInAddress}
         </ContactInfoLineContent>
       </ContactInfoLine>
@@ -49,7 +52,7 @@ const ContactText = styled.div`
   align-self: center;
   font-size: 5vw;
   @media ${device.mobileL} {
-    font-size: 8vw;
+    font-size: 10vw;
   }
 `;
 const ContactSource = styled(FontAwesomeIcon)`
@@ -64,11 +67,15 @@ const ContactInfoLine = styled.div`
   width: 100%;
 `;
 
-const ContactInfoLineContent = styled.div`
+const ContactInfoLineContent = styled.a`
   justify-self: center;
   align-self: center;
 
   @media ${device.mobileL} {
     font-size: ${(props) => `${props.fontSize + 3}vw`};
+  }
+  color: white;
+  :hover {
+    color: ${theme.primaryContrast};
   }
 `;

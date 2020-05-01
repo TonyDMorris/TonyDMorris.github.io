@@ -75,6 +75,7 @@ const ProjectDescription = styled.div`
   padding: 5% 5% 0% 5%;
   overflow: hidden;
   overflow-y: scroll;
+  flex-grow: 1;
 `;
 
 const ProjectLink = styled.a`

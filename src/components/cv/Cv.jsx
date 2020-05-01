@@ -6,6 +6,8 @@ import React, { useState } from "react";
 import { device } from "../../style/DeviceSizes";
 import { pdfjs } from "react-pdf";
 import styled from "styled-components";
+import { theme } from "../../style/theme";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 export default function Cv({ file }) {
   const [pages, setPages] = useState([]);
@@ -19,11 +21,16 @@ export default function Cv({ file }) {
     setPages(newArray);
   };
   return (
-    <Pdf file={file} onLoadSuccess={onDocumentLoadSuccess}>
-      {pages.map((pageNum) => {
-        return <PdfPage scale={width} key={pageNum} pageNumber={pageNum} />;
-      })}
-    </Pdf>
+    <>
+      <DownloadLink href={file} target="_blank">
+        Download
+      </DownloadLink>
+      <Pdf file={file} onLoadSuccess={onDocumentLoadSuccess}>
+        {pages.map((pageNum) => {
+          return <PdfPage scale={width} key={pageNum} pageNumber={pageNum} />;
+        })}
+      </Pdf>
+    </>
   );
 }
 
@@ -44,4 +51,15 @@ const PdfPage = styled(Page)`
     0 0px 4px rgba(0, 0, 0, 0.12), 0 0px 8px rgba(0, 0, 0, 0.12),
     0 0px 16px rgba(0, 0, 0, 0.12);
   align-self: center;
+`;
+
+const DownloadLink = styled.a`
+  font-family: JetBrainsMono;
+  text-decoration: none;
+  color: ${theme.text};
+  :hover {
+    color: ${theme.primaryContrast};
+  }
+  align-self: center;
+  margin-top: 10px;
 `;
